@@ -847,7 +847,7 @@ render_html(
         </div>
 
         <div class="chart-subtitle">
-            Evolução mensal &middot; não é afetado pelos filtros acima
+            Evolução mensal
         </div>
 
     </div>

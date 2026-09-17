@@ -87,44 +87,6 @@
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Selected value + typed text (theme-proof) */
-[data-testid="stSelectbox"] div[data-baseweb="select"] div,
-[data-testid="stSelectbox"] div[data-baseweb="select"] span,
-[data-testid="stSelectbox"] div[data-baseweb="select"] input {
-    color: #1A2744 !important;
-    -webkit-text-fill-color: #1A2744 !important;
-}
-
-/* Placeholder */
-[data-testid="stSelectbox"] div[data-baseweb="select"] [class*="placeholder"] {
-    color: #94A3B8 !important;
-    -webkit-text-fill-color: #94A3B8 !important;
-}
-
-/* Dropdown arrow */
-[data-testid="stSelectbox"] svg {
-    fill: #64748B !important;
-}
-
-/* Dropdown list — rendered in a portal, outside stSelectbox */
-div[data-baseweb="popover"] ul[role="listbox"] {
-    background-color: #FFFFFF !important;
-    border: 1px solid #E4E9F2;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
-}
-
-div[data-baseweb="popover"] li {
-    color: #1A2744 !important;
-    background-color: #FFFFFF !important;
-}
-
-div[data-baseweb="popover"] li:hover,
-div[data-baseweb="popover"] li[aria-selected="true"] {
-    background-color: #EAF7F6 !important;
-    color: #0E9384 !important;
-}
-
 [data-testid="stSelectbox"] > div > div:hover {
     border-color: #B7C2D0;
 }
