@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.stApp {
+    background: linear-gradient(180deg, #F6F8FB 0%, #F2F4F8 100%);
+    color: #1A2744;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.block-container {
+    max-width: 1450px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #E4E9F2;
+}
+
+.header-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.header-title {
+    font-size: 27px;
+    font-weight: 700;
+    color: #1A2744;
+    letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+    font-size: 13px;
+    color: #8A94A6;
+    font-weight: 500;
+}
+
+.header-badge {
+    background-color: #EAF7F6;
+    color: #0E9384;
+    border: 1px solid #CFEFEC;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+[data-testid="stSelectbox"] label {
+    color: #64748B;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+[data-testid="stSelectbox"] > div > div {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E0E8;
+    border-radius: 10px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Selected value + typed text (theme-proof) */
+[data-testid="stSelectbox"] div[data-baseweb="select"] div,
+[data-testid="stSelectbox"] div[data-baseweb="select"] span,
+[data-testid="stSelectbox"] div[data-baseweb="select"] input {
+    color: #1A2744 !important;
+    -webkit-text-fill-color: #1A2744 !important;
+}
+
+/* Placeholder */
+[data-testid="stSelectbox"] div[data-baseweb="select"] [class*="placeholder"] {
+    color: #94A3B8 !important;
+    -webkit-text-fill-color: #94A3B8 !important;
+}
+
+/* Dropdown arrow */
+[data-testid="stSelectbox"] svg {
+    fill: #64748B !important;
+}
+
+/* Dropdown list — rendered in a portal, outside stSelectbox */
+div[data-baseweb="popover"] ul[role="listbox"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E4E9F2;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+}
+
+div[data-baseweb="popover"] li {
+    color: #1A2744 !important;
+    background-color: #FFFFFF !important;
+}
+
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="popover"] li[aria-selected="true"] {
+    background-color: #EAF7F6 !important;
+    color: #0E9384 !important;
+}
+
+[data-testid="stSelectbox"] > div > div:hover {
+    border-color: #B7C2D0;
+}
+
+[data-testid="stSelectbox"] > div > div:focus-within {
+    border-color: #0EA6A0;
+    box-shadow: 0 0 0 3px rgba(14, 166, 160, 0.12);
+}
+
+
+/* =========================================================
+   KPI CARDS
+   ========================================================= */
+
+.kpi-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E9F2;
+    border-radius: 14px;
+    padding: 20px 22px;
+    min-height: 112px;
+
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+.kpi-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0EA6A0, #6EE7DF);
+}
+
+.kpi-label {
+    color: #64748B;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.kpi-value {
+    color: #1A2744;
+    font-size: 27px;
+    font-weight: 700;
+
+    font-family:
+        'IBM Plex Mono',
+        monospace;
+
+    margin: 8px 0 4px 0;
+
+    letter-spacing: -0.01em;
+}
+
+.kpi-description {
+    color: #94A3B8;
+    font-size: 13px;
+}
+
+.kpi-delta {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.kpi-delta-up {
+    color: #0E9384;
+}
+
+.kpi-delta-down {
+    color: #94A3B8;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section-heading {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    padding-top: 4px;
+    border-top: 1px solid #EDF1F6;
+}
+
+.section-title {
+    color: #1A2744;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.section-description {
+    color: #64748B;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   CHART HEADER
+   ========================================================= */
+
+.chart-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.chart-title {
+    color: #1A2744;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.chart-subtitle {
+    color: #94A3B8;
+    font-size: 12.5px;
+}
+
+.chart-tag {
+    background-color: #F1F5F9;
+    color: #64748B;
+    border-radius: 6px;
+    padding: 3px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   PLOTLY
+   ========================================================= */
+
+[data-testid="stPlotlyChart"] {
+    background-color: #FFFFFF;
+
+    border: 1px solid #E4E9F2;
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+
+    transition: box-shadow 0.15s ease;
+}
+
+[data-testid="stPlotlyChart"]:hover {
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   SEGMENTED CONTROL
+   ========================================================= */
+
+[data-testid="stSegmentedControl"] {
+    margin-bottom: 18px;
+}
+
+[data-testid="stSegmentedControl"] button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    min-width: 110px;
+    transition: all 0.15s ease;
+}
+
+[data-testid="stSegmentedControl"] button[aria-checked="true"] {
+    background-color: #1A2744 !important;
+    color: #FFFFFF !important;
+    border-color: #1A2744 !important;
+}
+
+
+/* =========================================================
+   RADIO FALLBACK
+   ========================================================= */
+
+[data-testid="stRadio"] > div {
+    gap: 8px;
+}
+
+[data-testid="stRadio"] label {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E0E8;
+    border-radius: 20px;
+    padding: 6px 18px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+[data-testid="stRadio"] label:hover {
+    border-color: #B7C2D0;
+}
+
+[data-testid="stRadio"] label:has(input:checked) {
+    background-color: #1A2744;
+    border-color: #1A2744;
+}
+
+[data-testid="stRadio"] label:has(input:checked) p {
+    color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    background-color: #FFFFFF;
+
+    border: 1px dashed #D9E0E8;
+
+    border-radius: 14px;
+
+    padding: 44px 20px;
+
+    text-align: center;
+
+    color: #64748B;
+
+    font-size: 14px;
+
+    margin-top: 24px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.dashboard-footer {
+    margin-top: 44px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #E4E9F2;
+
+    color: #94A3B8;
+
+    font-size: 12.5px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   STREAMLIT SPACING
+   ========================================================= */
+
+[data-testid="stHorizontalBlock"] {
+    gap: 1rem;
+}
+
+hr {
+    border-color: #E4E9F2 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-title {
+        font-size: 22px;
+    }
+
+    .kpi-value {
+        font-size: 21px;
+    }
+
+    [data-testid="stHorizontalBlock"] {
+        flex-wrap: wrap;
+    }
+
+    [data-testid="stHorizontalBlock"] > div {
+        min-width: 45% !important;
+    }
+}
